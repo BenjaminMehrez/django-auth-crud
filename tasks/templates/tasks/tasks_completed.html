@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+
+<body>
+    {% extends 'layouts/base.html' %}
+    {% block content %}
+
+    
+    <section class="section-task_completed container ">
+    <h1>Tasks Completed</h1>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <div>
+                    <h3>{{task.title}}</h3>
+                    <p>Completed: {{task.datecompleted|date:'M j Y:i'}}</p>
+                </div>
+                <a href="{% url 'task_detail' task.id %}">View</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+
+
+
+    {% endblock %}
+
+
+</body>
+
+</html>

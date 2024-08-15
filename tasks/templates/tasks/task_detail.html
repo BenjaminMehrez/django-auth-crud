@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Detail</title>
+</head>
+
+<body>
+
+
+    {% extends 'layouts/base.html' %}
+
+
+    {% block content %}
+
+
+
+    {{error}}
+
+    <section class="container section-task_detail">
+
+        <h2>Title: {{task.title}}</h2>
+        <p>Description: {{task.description}}</p>
+
+        <div class="padre">
+            <form method="POST">
+                {% csrf_token %}
+                <label class="form-create" for="title">
+                    Title:
+                    <input type="text" name="title" id="title">
+                </label>
+                <label class="form-create" for="description">
+                    Description:
+                    <textarea type="text" name="description" id="description"></textarea>
+                </label>
+                <label class="checkbox" for="important">
+                    Important
+                    <input type="checkbox" name="important" id="important">
+                </label>
+                <button>Update</button>
+            </form>
+
+            <div class="hijo">
+                <form action="{% url 'complete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button>Complete</button>
+                </form>
+
+                <form action="{% url 'delete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button>Delete</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    {% endblock %}
+
+
+</body>
+
+</html>

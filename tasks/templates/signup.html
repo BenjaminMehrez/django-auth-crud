@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    {% extends 'layouts/base.html' %}
+
+
+    {% block content %}
+
+
+    <section class="container section-signup">
+        {{error}}
+        {{success}}
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Sign Up</h1>
+            <label for="username" class="username">
+                Username
+                <input type="text" name="username" id="username">
+            </label>
+            <label for="password1" class="password1">
+                Password
+                <input type="password" name="password1" id="password1">
+            </label>
+            <label for="password2" class="password2">
+                Confirm your Password
+                <input type="password" name="password2" id="password2">
+            </label>
+            <button>Signup</button>
+        </form>
+    </section>
+
+
+    {% endblock %}
+
+</body>
+
+</html>

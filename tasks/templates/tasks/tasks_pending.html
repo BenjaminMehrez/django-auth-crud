@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+
+<body>
+
+    {% extends 'layouts/base.html' %}
+
+    {% block content %}
+
+    <section class="container section-task_pending">
+        <h1>Tasks Pending</h1>
+        <ul>
+            {% for task in tasks %}
+            {% if task.important %}
+            <li class="important">
+                <div>
+                    <p class="taskpending-title">{{task.title}}</p>
+                </div>
+                <a href="{% url 'task_detail' task.id %}">View</a>
+            </li>
+            {% else %}
+            <li class="notimportant">
+                <div>
+                    <p class="taskpending-title">{{task.title}}</p>
+                </div>
+                <a href="{% url 'task_detail' task.id %}">View</a>
+            </li>
+            {% endif %}
+
+            {% endfor %}
+
+        </ul>
+    </section>
+
+
+    {% endblock %}
+
+
+</body>
+
+</html>
