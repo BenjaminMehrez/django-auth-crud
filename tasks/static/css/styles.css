@@ -11,6 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: #000;
 }
 
 a {
@@ -23,10 +24,13 @@ li {
 }
 
 
+/* ---------------- HEADER --------------- */
+
 header {
-    background-color: #444;
+    background-color: #fff;
     margin-bottom: 100px;
 }
+
 
 
 nav {
