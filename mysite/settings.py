@@ -137,3 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tasks/static')
 ]
+
+
+ALLOWED_HOSTS = ['localhost','django-auth-crud-production.up.railway.app']
