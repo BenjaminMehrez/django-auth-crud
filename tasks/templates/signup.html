@@ -17,9 +17,7 @@
     <section class="container section-signup">
         {{error}}
         {{success}}
-
-
-        <form method="POST">
+        <form class="signupform" method="POST">
             {% csrf_token %}
             <h1>Sign Up</h1>
             <label for="username" class="username">
