@@ -34,6 +34,8 @@ li {
 .header {
     background-color: #444;
     margin-bottom: 100px;
+    container-name: header;
+    container-type: inline-size;
 }
 
 .navbar {
@@ -43,34 +45,71 @@ li {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    padding-inline: 2rem;
 }
 
-
-.menu-hamburguer input{
+#menu-hamburguer{
     display: none;
 }
 
+#menu-hamburguer:checked + .ul_links {
+    height: calc(100vh - 80px);
+}
+
+.list_icon{
+    cursor: pointer;
+}
+
+.navbar img{
+    width: 50px;
+}
 
 .ul_links{
     width: 100%;
-    background-color: orange;
+    background-color: #222;
     position: absolute;
+    left: 0;
     top: 80px;
-    height: calc(100vh - 80px);
+    height: 0;
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    gap: 3rem;
+    transition: 0.4s;
 }
 
 
+.link{
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: bold;
+}
 
 
+/* ------- NAV DESKTOP ---------*/
 
 
+@container header (min-width: 768px){
+    .label_hamburger{
+        display: none;
+    }
 
+    .ul_links{
+        position: static;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        gap: 2rem;
+        background-color: transparent;
+    }
 
-
+    .link {
+        font-size: 1.2rem;
+        transition: all .3s;
+    }
+}
 
 
 

@@ -13,11 +13,11 @@
 <body>
     <header class="header">
         <nav class="navbar">
-            <h1>Tasks</h1>
-            <label for="menu-hamburguer" class="menu-hamburguer">
-                <img class="list_icon" src="{% static 'images/bx-menu.svg' %}" alt="">
-                <input type="checkbox" name="checkbox" id="menu-hamburguer">
+            <img src="{% static 'images/tasks.svg' %}" alt="logo">
+            <label for="menu-hamburguer" class="label_hamburger">
+                <img class="list_icon" src="{% static 'images/menu.svg' %}" alt="">
             </label>
+            <input type="checkbox" name="checkbox" id="menu-hamburguer">
             <ul class="ul_links">
                 <li class="li_links"><a class="link" href="{% url 'home' %}">Home</a></li>
                 {% if user.is_authenticated %}
