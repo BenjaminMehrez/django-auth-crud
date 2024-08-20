@@ -120,11 +120,6 @@ li {
 
 /* ------------ SECTION HOME ----------- */
 
-.section-home {
-    container-name: home;
-    container-type: inline-size;
-}
-
 .section-home>div {
     border: 1px solid #999;
     padding: 40px;
@@ -170,7 +165,7 @@ li {
 
 /* ------------- SECTION HOME MOVIL -------------- */
 
-@container home (max-width: 600px) {
+@media (max-width: 600px) {
 
     .section-home div {
         width: 90dvw;
