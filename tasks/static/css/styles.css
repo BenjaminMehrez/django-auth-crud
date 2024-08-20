@@ -153,7 +153,7 @@ li {
 .section-home div button {
     padding: 16px 27px;
     cursor: pointer;
-    border: 1px solid;
+    border: 1px solid #222;
     background-color: transparent;
     font-size: 20px;
     transition: 1s;
@@ -165,7 +165,6 @@ li {
 
 
 .section-home div button:hover {
-    border: 1px solid;
     border-radius: 20px;
 }
 
